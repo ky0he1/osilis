@@ -1,3 +1,5 @@
 *.o
 .*.d
 .vscode/
+kernel/kernel.elf
+notes.txt
