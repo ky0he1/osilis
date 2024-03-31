@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # kernelのビルド
+source $HOME/osbook/devenv/buildenv.sh
 cd $HOME/github/osilis/kernel
-clang++ -O2 -Wall -g --target=x86_64-elf -ffreestanding -mno-red-zone \
+clang++ $CPPFLAGS -O2 -Wall -g --target=x86_64-elf -ffreestanding -mno-red-zone \
     -fno-exceptions -fno-rtti -std=c++17 -c main.cpp
-ld.lld --entry KernelMain -z norelro -z separate-code \
+ld.lld $LDFLAGS --entry KernelMain -z norelro -z separate-code \
     --image-base 0x100000 --static -o kernel.elf main.o
 
 cd $HOME/edk2
