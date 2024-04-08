@@ -3,3 +3,4 @@
 .vscode/
 kernel/kernel.elf
 notes.txt
+*.swp
